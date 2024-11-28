@@ -94,20 +94,20 @@ const filterProductsByCategoryName = computed(() => {
             return products.value.filter((product)  => product.category == category);
         }
         if (search) {
-            return products.value.filter((product) => product.name.includes(search));
+            return products.value.filter((product) => product.name.toLowerCase().includes(search.toLowerCase()));
         }
         return products.value;
     }
 });
-
-
-
-
-
-
+const findProductById = computed(() => {
+    return (id) => {
+        return products.value.find((product) => product.id == id)
+    }
+    });
 
 return {
     products,
     filterProductsByCategoryName,
+    findProductById,
 }
 });
