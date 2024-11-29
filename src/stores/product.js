@@ -105,9 +105,14 @@ const findProductById = computed(() => {
     }
     });
 
+
+
+
+
+
 return {
     products,
     filterProductsByCategoryName,
-    findProductById,
+    findProductById
 }
 });
